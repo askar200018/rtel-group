@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/rtel-group/static/css/main.bbf20c33.css",
-    "main.js": "/rtel-group/static/js/main.f85c9200.js",
+    "main.js": "/rtel-group/static/js/main.cf4eddfc.js",
     "index.html": "/rtel-group/index.html",
     "main.bbf20c33.css.map": "/rtel-group/static/css/main.bbf20c33.css.map",
-    "main.f85c9200.js.map": "/rtel-group/static/js/main.f85c9200.js.map"
+    "main.cf4eddfc.js.map": "/rtel-group/static/js/main.cf4eddfc.js.map"
   },
   "entrypoints": [
     "static/css/main.bbf20c33.css",
-    "static/js/main.f85c9200.js"
+    "static/js/main.cf4eddfc.js"
   ]
 }
