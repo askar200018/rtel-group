@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rtel-group/static/css/main.bbf20c33.css",
+    "main.js": "/rtel-group/static/js/main.fbfd4f2e.js",
+    "index.html": "/rtel-group/index.html",
+    "main.bbf20c33.css.map": "/rtel-group/static/css/main.bbf20c33.css.map",
+    "main.fbfd4f2e.js.map": "/rtel-group/static/js/main.fbfd4f2e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bbf20c33.css",
+    "static/js/main.fbfd4f2e.js"
+  ]
+}
