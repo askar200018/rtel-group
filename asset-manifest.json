@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/rtel-group/static/css/main.bbf20c33.css",
-    "main.js": "/rtel-group/static/js/main.88066a35.js",
+    "main.css": "/rtel-group/static/css/main.adf7264c.css",
+    "main.js": "/rtel-group/static/js/main.4dbc08b4.js",
     "index.html": "/rtel-group/index.html",
-    "main.bbf20c33.css.map": "/rtel-group/static/css/main.bbf20c33.css.map",
-    "main.88066a35.js.map": "/rtel-group/static/js/main.88066a35.js.map"
+    "main.adf7264c.css.map": "/rtel-group/static/css/main.adf7264c.css.map",
+    "main.4dbc08b4.js.map": "/rtel-group/static/js/main.4dbc08b4.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbf20c33.css",
-    "static/js/main.88066a35.js"
+    "static/css/main.adf7264c.css",
+    "static/js/main.4dbc08b4.js"
   ]
 }
