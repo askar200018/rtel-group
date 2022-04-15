@@ -1,8 +1,9 @@
-const DropdownMenu = () => {
+// eslint-disable-next-line react/prop-types
+const DropdownMenu = ({ className }) => {
   return (
     <div
       id="dropdown"
-      className="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
+      className={`absolute z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 ${className}`}>
       <ul
         className="py-1 text-sm text-gray-700 dark:text-gray-200"
         aria-labelledby="dropdownDefault">
@@ -10,28 +11,14 @@ const DropdownMenu = () => {
           <a
             href="#"
             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-            Dashboard
+            TETRA системы и терминалы
           </a>
         </li>
         <li>
           <a
             href="#"
             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-            Settings
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-            Earnings
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-            Sign out
+            PoC-решения для оперативной связи поверх сети сотового оператора
           </a>
         </li>
       </ul>

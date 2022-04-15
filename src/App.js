@@ -7,7 +7,7 @@ import Main from './pages/Main';
 
 const App = () => {
   return (
-    <div className="flex flex-col justify-between min-h-screen bg-gradient-to-r bg-gray-900">
+    <div className="flex flex-col justify-between min-h-screen bg-gradient-to-r bg-black">
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
