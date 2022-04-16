@@ -7,11 +7,11 @@ import Main from './pages/Main';
 
 const App = () => {
   return (
-    <div className="flex flex-col justify-between min-h-screen bg-gradient-to-r bg-black">
+    <div className="flex flex-col justify-between min-h-screen" style={{ paddingTop: '108px' }}>
       <Header />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="about" element={<TestComponent />} />
+        <Route path="/rtel-group" element={<Main />} />
+        <Route path="/rtel-group/about" element={<TestComponent />} />
       </Routes>
       <Footer />
     </div>
