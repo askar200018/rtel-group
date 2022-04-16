@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import TestComponent from './components/TestComponent';
+import Catalog from './pages/Catalog';
 import Main from './pages/Main';
 // import TestPage from './pages/TestPage';
 
@@ -11,6 +12,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/rtel-group" element={<Main />} />
+        <Route path="/rtel-group/catalog" element={<Catalog />} />
         <Route path="/rtel-group/about" element={<TestComponent />} />
       </Routes>
       <Footer />

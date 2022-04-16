@@ -21,11 +21,11 @@ const Navbar = () => {
           </Link>
         </div>
         <ul className="flex space-x-8">
-          <NavbarLink name="Каталог продукции"></NavbarLink>
-          <NavbarLink name="Проекты"></NavbarLink>
-          <NavbarLink name="Решения"></NavbarLink>
-          <NavbarLink name="Итоги работ"></NavbarLink>
-          <NavbarLink name="Оформить запрос"></NavbarLink>
+          <NavbarLink linkTo="/rtel-group/catalog" name="Каталог продукции"></NavbarLink>
+          <NavbarLink linkTo="/rtel-group/catalog" name="Проекты"></NavbarLink>
+          <NavbarLink linkTo="/rtel-group/catalog" name="Решения"></NavbarLink>
+          <NavbarLink linkTo="/rtel-group/catalog" name="Итоги работ"></NavbarLink>
+          <NavbarLink linkTo="/rtel-group/catalog" name="Оформить запрос"></NavbarLink>
         </ul>
       </nav>
     </Container>
