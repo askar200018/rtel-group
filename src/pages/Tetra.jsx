@@ -1,6 +1,7 @@
 import { Container, Typography } from '@mui/material';
 import { ReactComponent as TetraIcon } from '../assets/icons/tetra.svg';
 import Advantage from '../components/Advantage';
+import SectionCard from '../components/SectionCard';
 
 const Tetra = () => {
   return (
@@ -78,7 +79,39 @@ const Tetra = () => {
           </div>
         </Container>
       </div>
-      <div className="sectiona"></div>
+      <div className="section py-12 bg-gray-100">
+        <Container>
+          <Typography
+            sx={{
+              marginBottom: '32px',
+            }}
+            variant="h5"
+            align="center"
+            className="text-gray-600">
+            Разделы каталога TETRA систем и терминалов
+          </Typography>
+          <div className="flex justify-between">
+            <SectionCard
+              linkTo="/test"
+              imgLink="https://www.hytera.ru/upload/resize_cache/webp/iblock/80c/80c85bdea2ed2f58dade3d71c61acffd.webp"
+              alt="Tetra Systems"
+              title="TETRA системы"
+            />
+            <SectionCard
+              linkTo="/test"
+              imgLink="https://www.hytera.ru/upload/resize_cache/webp/iblock/dc8/dc8c79831d6c6fc8e3600215f3ded547.webp"
+              alt="Systems"
+              title="Система двунаправленных усилителей радиосигнала BDA"
+            />
+            <SectionCard
+              linkTo="/test"
+              imgLink="https://www.hytera.ru/upload/resize_cache/webp/iblock/6b1/6b1a08e276dfc7aba6addb8aa175a661.webp"
+              alt="TETRA терминалы"
+              title="TETRA терминалы"
+            />
+          </div>
+        </Container>
+      </div>
       <div className="information"></div>
     </div>
   );
