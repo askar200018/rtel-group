@@ -2,10 +2,15 @@ import { Box, Container, Divider, Typography } from '@mui/material';
 import CatalogItem from '../components/CatalogItem';
 import { ReactComponent as TetraIcon } from '../assets/icons/tetra.svg';
 import { ReactComponent as PocIcon } from '../assets/icons/poc.svg';
+import { HeaderHeight } from '../variables/vairables';
 
 const Catalog = () => {
   return (
-    <Container maxWidth="xl">
+    <Container
+      maxWidth="xl"
+      sx={{
+        paddingTop: `${HeaderHeight}px`,
+      }}>
       <Box
         sx={{
           paddingY: '48px',
@@ -26,10 +31,15 @@ const Catalog = () => {
             justifyContent: 'center',
             gap: '24px',
           }}>
-          <CatalogItem icon={<TetraIcon height="70" />} name="DMR системы и терминалы" />
+          <CatalogItem
+            icon={<TetraIcon height="70" />}
+            name="DMR системы и терминалы"
+            linkTo="/rtel-group/catalog/tetra"
+          />
           <CatalogItem
             icon={<PocIcon height="70" />}
             name="PoC-решения для оперативной связи поверх сети сотового оператора"
+            linkTo="/rtel-group/catalog/poc-solutions"
           />
         </Box>
       </Box>

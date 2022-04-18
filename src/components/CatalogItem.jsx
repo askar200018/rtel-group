@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CatalogItem = (props) => {
   return (
     <Link
-      to="/test"
+      to={props.linkTo}
       className="flex flex-col items-center py-8 px-4 bg-gray-100 rounded-lg w-96"
       style={{
         height: '462px',
