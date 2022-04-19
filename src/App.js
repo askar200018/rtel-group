@@ -8,16 +8,20 @@ import Main from './pages/Main';
 
 import './style.scss';
 import PocSolutions from './pages/Poc';
+import ScrollToTop from './components/ScrollToTop';
+import CatalogDetail from './pages/CatalogDetail';
 
 const App = () => {
   return (
     <div className="flex flex-col justify-between min-h-screen">
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/rtel-group" element={<Main />} />
         <Route path="/rtel-group/catalog" element={<Catalog />} />
         <Route path="/rtel-group/catalog/tetra" element={<Tetra />} />
         <Route path="/rtel-group/catalog/poc-solutions" element={<PocSolutions />} />
+        <Route path="/rtel-group/catalog/tetra/:categoryName" element={<CatalogDetail />} />
         <Route path="/rtel-group/about" element={<TestComponent />} />
       </Routes>
       <Footer />

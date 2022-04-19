@@ -37,7 +37,7 @@ const Catalog = () => {
             linkTo="/rtel-group/catalog/tetra"
           />
           <CatalogItem
-            icon={<PocIcon height="70" />}
+            icon={<PocIcon height="70" fill="black" />}
             name="PoC-решения для оперативной связи поверх сети сотового оператора"
             linkTo="/rtel-group/catalog/poc-solutions"
           />
