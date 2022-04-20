@@ -55,7 +55,9 @@ const ProductDetail = () => {
           className="text-gray-600">
           {product.name}
         </Typography>
-        <Divider variant="inset" textAlign="center" />
+        <Container maxWidth="xl">
+          <Divider variant="middle" />
+        </Container>
       </Box>
       <div className="bg-gray-100 py-8">
         <Container maxWidth="lg">

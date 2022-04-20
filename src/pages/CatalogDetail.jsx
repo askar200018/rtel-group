@@ -36,7 +36,9 @@ const CatalogDetail = () => {
         <Typography variant="h4" align="center" sx={{ marginBottom: '16px' }}>
           TETRA СИСТЕМЫ
         </Typography>
-        <Divider variant="inset" textAlign="center" />
+        <Container maxWidth="xl">
+          <Divider variant="middle" />
+        </Container>
       </Box>
       <div className=" bg-gray-100">
         <Container
