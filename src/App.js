@@ -10,6 +10,8 @@ import './style.scss';
 import PocSolutions from './pages/Poc';
 import ScrollToTop from './components/ScrollToTop';
 import CatalogDetail from './pages/CatalogDetail';
+import ProductDetail from './pages/ProductDetail';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -22,7 +24,12 @@ const App = () => {
         <Route path="/rtel-group/catalog/tetra" element={<Tetra />} />
         <Route path="/rtel-group/catalog/poc-solutions" element={<PocSolutions />} />
         <Route path="/rtel-group/catalog/tetra/:categoryName" element={<CatalogDetail />} />
+        <Route
+          path="/rtel-group/catalog/tetra/:categoryId/:productId"
+          element={<ProductDetail />}
+        />
         <Route path="/rtel-group/about" element={<TestComponent />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

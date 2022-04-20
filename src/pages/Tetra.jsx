@@ -92,7 +92,7 @@ const Tetra = () => {
           </Typography>
           <div className="flex justify-between">
             <SectionCard
-              linkTo="/test"
+              linkTo="tetra-systems"
               imgLink="https://www.hytera.ru/upload/resize_cache/webp/iblock/80c/80c85bdea2ed2f58dade3d71c61acffd.webp"
               alt="Tetra Systems"
               title="TETRA системы"

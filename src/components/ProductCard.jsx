@@ -11,7 +11,7 @@ const ProductCard = (props) => {
       }}>
       <Link
         to={props.linkTo}
-        className="flex flex-col justify-center items-center py-8 px-4 bg-white rounded-lg">
+        className="flex flex-col justify-center items-center py-8 px-4 h-full bg-white rounded-lg">
         <Box
           sx={{
             padding: '16px',
