@@ -27,7 +27,7 @@ const Navbar = () => {
         <ul className="flex items-center space-x-8">
           <NavbarLink linkTo="/rtel-group/catalog" name="Каталог продукции"></NavbarLink>
           <NavbarLink linkTo="/rtel-group/catalog" name="Проекты"></NavbarLink>
-          <NavbarLink linkTo="/rtel-group/catalog" name="Решения"></NavbarLink>
+          <NavbarLink linkTo="/rtel-group/solutions" name="Решения"></NavbarLink>
           <NavbarLink linkTo="/rtel-group/catalog" name="Итоги работ"></NavbarLink>
           <NavbarLink linkTo="/rtel-group/catalog" name="Оформить запрос"></NavbarLink>
         </ul>

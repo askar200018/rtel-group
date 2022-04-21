@@ -12,6 +12,7 @@ import ScrollToTop from './components/ScrollToTop';
 import CatalogDetail from './pages/CatalogDetail';
 import ProductDetail from './pages/ProductDetail';
 import NotFound from './pages/NotFound';
+import Solutions from './pages/Solutions';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           path="/rtel-group/catalog/tetra/:categoryId/:productId"
           element={<ProductDetail />}
         />
+        <Route path="/rtel-group/solutions" element={<Solutions />} />
         <Route path="/rtel-group/about" element={<TestComponent />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
