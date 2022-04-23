@@ -14,7 +14,7 @@ const SolutionDetail = () => {
         </Typography>
         <a
           className="py-2 px-4 text-white bg-green-600 rounded-xl cursor-pointer"
-          href="/files/test.pdf"
+          href="/rtel-group/files/test.pdf"
           download
           target="_blank"
           rel="noreferrer">
