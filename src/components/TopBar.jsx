@@ -10,8 +10,8 @@ const TopBar = () => {
         paddingY: '8px',
       }}>
       <ul className="flex justify-end space-x-8">
-        <NavbarLink linkTo="/rtel-group/catalog" name="Контакты"></NavbarLink>
-        <NavbarLink linkTo="/rtel-group/catalog" name="Язык"></NavbarLink>
+        <NavbarLink linkTo="/catalog" name="Контакты"></NavbarLink>
+        <NavbarLink linkTo="/catalog" name="Язык"></NavbarLink>
       </ul>
     </Container>
   );

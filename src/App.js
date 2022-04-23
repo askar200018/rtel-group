@@ -22,19 +22,16 @@ const App = () => {
       <ScrollToTop />
       <Header />
       <Routes>
-        <Route path="/rtel-group" element={<Main />} />
-        <Route path="/rtel-group/catalog" element={<Catalog />} />
-        <Route path="/rtel-group/catalog/tetra" element={<Tetra />} />
-        <Route path="/rtel-group/catalog/poc-solutions" element={<PocSolutions />} />
-        <Route path="/rtel-group/catalog/tetra/:categoryName" element={<CatalogDetail />} />
-        <Route
-          path="/rtel-group/catalog/tetra/:categoryId/:productId"
-          element={<ProductDetail />}
-        />
-        <Route path="/rtel-group/solutions" element={<Solutions />} />
-        <Route path="/rtel-group/solutions/:solutionName" element={<SolutionDetail />} />
-        <Route path="/rtel-group/projects" element={<Projects />} />
-        <Route path="/rtel-group/about" element={<TestComponent />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog/tetra" element={<Tetra />} />
+        <Route path="/catalog/poc-solutions" element={<PocSolutions />} />
+        <Route path="/catalog/tetra/:categoryName" element={<CatalogDetail />} />
+        <Route path="/catalog/tetra/:categoryId/:productId" element={<ProductDetail />} />
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/solutions/:solutionName" element={<SolutionDetail />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<TestComponent />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

@@ -34,12 +34,12 @@ const Catalog = () => {
           <CatalogItem
             icon={<TetraIcon height="70" />}
             name="DMR системы и терминалы"
-            linkTo="/rtel-group/catalog/tetra"
+            linkTo="/catalog/tetra"
           />
           <CatalogItem
             icon={<PocIcon height="70" fill="black" />}
             name="PoC-решения для оперативной связи поверх сети сотового оператора"
-            linkTo="/rtel-group/catalog/poc-solutions"
+            linkTo="/catalog/poc-solutions"
           />
         </Box>
       </Box>

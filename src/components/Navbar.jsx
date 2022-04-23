@@ -12,10 +12,7 @@ const Navbar = () => {
       }}>
       <nav className="flex justify-between">
         <div>
-          <Link
-            to="/rtel-group"
-            className="flex items-center text-xl font-medium text-white"
-            variant="h6">
+          <Link to="/" className="flex items-center text-xl font-medium text-white" variant="h6">
             <img
               src="https://flowbite.com/docs/images/logo.svg"
               className="mr-3 h-6 sm:h-9"
@@ -25,11 +22,11 @@ const Navbar = () => {
           </Link>
         </div>
         <ul className="flex items-center space-x-8">
-          <NavbarLink linkTo="/rtel-group/catalog" name="Каталог продукции"></NavbarLink>
-          <NavbarLink linkTo="/rtel-group/projects" name="Проекты"></NavbarLink>
-          <NavbarLink linkTo="/rtel-group/solutions" name="Решения"></NavbarLink>
-          <NavbarLink linkTo="/rtel-group/catalog" name="Итоги работ"></NavbarLink>
-          <NavbarLink linkTo="/rtel-group/catalog" name="Оформить запрос"></NavbarLink>
+          <NavbarLink linkTo="/catalog" name="Каталог продукции"></NavbarLink>
+          <NavbarLink linkTo="/projects" name="Проекты"></NavbarLink>
+          <NavbarLink linkTo="/solutions" name="Решения"></NavbarLink>
+          <NavbarLink linkTo="/catalog" name="Итоги работ"></NavbarLink>
+          <NavbarLink linkTo="/catalog" name="Оформить запрос"></NavbarLink>
         </ul>
       </nav>
     </Container>

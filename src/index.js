@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 import './index.css';
@@ -8,10 +8,10 @@ import 'swiper/css/bundle';
 import App from './App';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
+  <React.StrictMode>
+    <HashRouter>
       <App />
-    </React.StrictMode>
-  </BrowserRouter>,
+    </HashRouter>
+  </React.StrictMode>,
   document.getElementById('root'),
 );
