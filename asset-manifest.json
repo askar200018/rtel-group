@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/rtel-group/static/css/main.65499086.css",
-    "main.js": "/rtel-group/static/js/main.c73d8591.js",
+    "main.js": "/rtel-group/static/js/main.f3641e7b.js",
     "static/media/poc.svg": "/rtel-group/static/media/poc.cbfa63907033fbd7f25d67658bb9b893.svg",
     "static/media/tetra.svg": "/rtel-group/static/media/tetra.e29e33ed47df757ca4d2742e8ecaf7a5.svg",
     "index.html": "/rtel-group/index.html",
     "main.65499086.css.map": "/rtel-group/static/css/main.65499086.css.map",
-    "main.c73d8591.js.map": "/rtel-group/static/js/main.c73d8591.js.map"
+    "main.f3641e7b.js.map": "/rtel-group/static/js/main.f3641e7b.js.map"
   },
   "entrypoints": [
     "static/css/main.65499086.css",
-    "static/js/main.c73d8591.js"
+    "static/js/main.f3641e7b.js"
   ]
 }
