@@ -1,14 +1,18 @@
 import { Box, Container, Divider, Typography } from '@mui/material';
 import React, { useRef, useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import mapboxgl from '!mapbox-gl';
 import { HeaderHeight } from '../variables/vairables';
 import { MARKERS } from '../mock/markers';
+import Popup from '../components/Popup';
+import { HashRouter } from 'react-router-dom';
 
 mapboxgl.accessToken =
   'pk.eyJ1Ijoib3NrYXItYWdhIiwiYSI6ImNsMmF2aDlkdDA3NzIza25yZTB6cGlsY3gifQ.Ma1eN-_aYN5AHkewOnTR5A';
 
 const Projects = () => {
   const mapContainer = useRef(null);
+  const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
   const map = useRef(null);
   const [lng, setLng] = useState(66.9237);
   const [lat, setLat] = useState(48.0196);
@@ -25,34 +29,19 @@ const Projects = () => {
 
     map.current.addControl(new mapboxgl.NavigationControl());
     MARKERS.forEach((marker) => {
+      const popupNode = document.createElement('div');
+      ReactDOM.render(
+        <HashRouter>
+          <Popup marker={marker} />
+        </HashRouter>,
+        popupNode,
+      );
+
       new mapboxgl.Marker()
         .setLngLat(marker.coordinates)
         .setPopup(
-          new mapboxgl.Popup({ className: 'custom-popup', maxWidth: '300px' }).setHTML(
-            `
-            <h4 class="text-base text-gray-800">Использованные оборудования:</h4>
-            <ul>
-              ${marker.equipments
-                .map(
-                  (equipment) => `
-                <li>
-                  <a 
-                    class="text-blue-800 hover:underline outline-none" 
-                    href="${equipment.link}" 
-                    target="_blank"
-                    >${equipment.text}</a>
-                </li>
-              `,
-                )
-                .join('')}
-            </ul>
-            <h4 class="text-base text-gray-800">Решения:</h4>
-            <a 
-              class="text-blue-800 hover:underline outline-none" 
-              href="${marker.solution.link}" 
-              target="_blank"
-              >${marker.solution.text}</a>
-          `,
+          new mapboxgl.Popup({ className: 'custom-popup', maxWidth: '300px' }).setDOMContent(
+            popupNode,
           ),
         )
         .addTo(map.current);
