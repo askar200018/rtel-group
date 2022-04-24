@@ -12,7 +12,6 @@ mapboxgl.accessToken =
 
 const Projects = () => {
   const mapContainer = useRef(null);
-  const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
   const map = useRef(null);
   const [lng, setLng] = useState(66.9237);
   const [lat, setLat] = useState(48.0196);
