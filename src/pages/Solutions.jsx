@@ -36,7 +36,7 @@ const Solutions = () => {
                 backgroundImage:
                   'url("https://www.hytera.ru/upload/resize_cache/webp/iblock/76d/76db6bbf5dfba0d15776dbaa0e8ce5a1.webp")',
               }}>
-              <Link to="test">
+              <Link to="/solutions/smart-tower">
                 <Typography variant="h4" className="text-white" sx={{ marginBottom: '16px' }}>
                   Smart tower
                 </Typography>
@@ -65,7 +65,7 @@ const Solutions = () => {
                 backgroundImage:
                   'url("https://www.hytera.ru/upload/resize_cache/webp/iblock/76d/76db6bbf5dfba0d15776dbaa0e8ce5a1.webp")',
               }}>
-              <Link to="test">
+              <Link to="/solutions/cybe-rr">
                 <Typography variant="h4" className="text-white" sx={{ marginBottom: '16px' }}>
                   Cybe-RR
                 </Typography>
@@ -94,7 +94,7 @@ const Solutions = () => {
                 backgroundImage:
                   'url("https://www.hytera.ru/upload/resize_cache/webp/iblock/76d/76db6bbf5dfba0d15776dbaa0e8ce5a1.webp")',
               }}>
-              <Link to="test">
+              <Link to="/solutions/hytalk">
                 <Typography variant="h4" className="text-white" sx={{ marginBottom: '16px' }}>
                   Hytalk
                 </Typography>

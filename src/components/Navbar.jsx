@@ -25,8 +25,8 @@ const Navbar = () => {
           <NavbarLink linkTo="/catalog" name="Каталог продукции"></NavbarLink>
           <NavbarLink linkTo="/projects" name="Проекты"></NavbarLink>
           <NavbarLink linkTo="/solutions" name="Решения"></NavbarLink>
-          <NavbarLink linkTo="/catalog" name="Итоги работ"></NavbarLink>
-          <NavbarLink linkTo="/catalog" name="Оформить запрос"></NavbarLink>
+          <NavbarLink linkTo="/solutions/results" name="Итоги работ"></NavbarLink>
+          <NavbarLink linkTo="/feedback" name="Оформить запрос"></NavbarLink>
         </ul>
       </nav>
     </Container>

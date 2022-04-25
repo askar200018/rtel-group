@@ -5,8 +5,6 @@ import TestComponent from './components/TestComponent';
 import Tetra from './pages/Tetra';
 import Catalog from './pages/Catalog';
 import Main from './pages/Main';
-
-import './style.scss';
 import PocSolutions from './pages/Poc';
 import ScrollToTop from './components/ScrollToTop';
 import CatalogDetail from './pages/CatalogDetail';
@@ -15,6 +13,9 @@ import NotFound from './pages/NotFound';
 import Solutions from './pages/Solutions';
 import SolutionDetail from './pages/SolutionDetail';
 import Projects from './pages/Projects';
+import Feedback from './pages/Feedback';
+
+import './style.scss';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/solutions/:solutionName" element={<SolutionDetail />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/feedback" element={<Feedback />} />
         <Route path="/about" element={<TestComponent />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
