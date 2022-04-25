@@ -1,5 +1,6 @@
 import { Container } from '@mui/material';
 import NavbarLink from './NavbarLink';
+import LanguageMenu from './LanguageMenu';
 
 const TopBar = () => {
   return (
@@ -8,10 +9,13 @@ const TopBar = () => {
       sx={{
         backgroundColor: 'black',
         paddingY: '8px',
+        fontFamily: 'Roboto, sans-serif',
       }}>
-      <ul className="flex justify-end space-x-8">
+      <ul className="flex justify-end space-x-4">
         <NavbarLink linkTo="/catalog" name="Контакты"></NavbarLink>
-        <NavbarLink linkTo="/catalog" name="Язык"></NavbarLink>
+        <li className="w-20">
+          <LanguageMenu />
+        </li>
       </ul>
     </Container>
   );

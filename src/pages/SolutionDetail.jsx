@@ -30,7 +30,7 @@ const SolutionDetail = () => {
           {solution.title}
         </Typography>
         <a
-          className="py-2 px-4 text-white bg-green-600 rounded-xl cursor-pointer"
+          className="py-2 px-6 text-lg text-white bg-gray-800 rounded-lg cursor-pointer"
           href={solution.filePath}
           download
           target="_blank"

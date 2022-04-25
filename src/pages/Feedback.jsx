@@ -77,7 +77,17 @@ const Feedback = () => {
             />
           </div>
           <div className="flex justify-end">
-            <Button variant="contained" color="success" size="large" type="submit">
+            <Button
+              variant="contained"
+              size="large"
+              type="submit"
+              sx={{
+                backgroundColor: '#1f2937',
+                '&:hover': {
+                  backgroundColor: '#1f2937',
+                  opacity: 0.9,
+                },
+              }}>
               Submit
             </Button>
           </div>

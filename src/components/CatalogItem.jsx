@@ -23,11 +23,16 @@ const CatalogItem = (props) => {
       </Typography>
       <Button
         variant="contained"
-        color="success"
         size="large"
+        className="bg-gray-800"
         sx={{
           borderRadius: '8px',
           marginTop: 'auto',
+          backgroundColor: '#1f2937',
+          '&:hover': {
+            backgroundColor: '#1f2937',
+            opacity: 0.9,
+          },
         }}>
         Подробнее
       </Button>

@@ -3,6 +3,24 @@ import { Link } from 'react-router-dom';
 import NavbarLink from './NavbarLink';
 
 const Navbar = () => {
+  const catalogMenu = [
+    { link: '/catalog/tetra', name: 'DMR системы и терминалы' },
+    {
+      link: '/catalog/poc-solutions',
+      name: 'PoC-решения для оперативной связи поверх сети сотового оператора',
+    },
+  ];
+  const solutionsMenu = [
+    { link: '/solutions/smart-tower', name: 'Smart Tower' },
+    {
+      link: '/solutions/cybe-rr',
+      name: 'Cybe-RR',
+    },
+    {
+      link: '/solutions/hytalk',
+      name: 'Hytalk',
+    },
+  ];
   return (
     <Container
       maxWidth="xl"
@@ -22,9 +40,10 @@ const Navbar = () => {
           </Link>
         </div>
         <ul className="flex items-center space-x-8">
-          <NavbarLink linkTo="/catalog" name="Каталог продукции"></NavbarLink>
+          {/* <MenuLink links={catalogLinks}>Каталог продукции</MenuLink> */}
+          <NavbarLink linkTo="/catalog" name="Каталог продукции" menu={catalogMenu}></NavbarLink>
           <NavbarLink linkTo="/projects" name="Проекты"></NavbarLink>
-          <NavbarLink linkTo="/solutions" name="Решения"></NavbarLink>
+          <NavbarLink linkTo="/solutions" name="Решения" menu={solutionsMenu}></NavbarLink>
           <NavbarLink linkTo="/solutions/results" name="Итоги работ"></NavbarLink>
           <NavbarLink linkTo="/feedback" name="Оформить запрос"></NavbarLink>
         </ul>
