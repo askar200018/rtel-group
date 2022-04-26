@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import { HeaderHeight } from '../variables/vairables';
 
 const Main = () => {
+  const { t } = useTranslation();
   return (
     <section
       className="py-8 bg-white"
@@ -13,17 +15,11 @@ const Main = () => {
         </div>
         <div className="flex flex-wrap">
           <div className="w-5/6 sm:w-1/2 p-6">
-            <h3 className="text-3xl text-black font-bold leading-none mb-3">О компании</h3>
-            <p className="text-gray-800 indent-8">
-              Компания Rtel Group основана в 2018 году. Мы первый виртуальный оператор оперативной
-              связи на территории Республики Казахстан. Главная компетенция компании заключается в
-              сфере инновационных технологий коммуникации и радиосвязи.
-            </p>
-            <p className="text-gray-800 mb-8 indent-8">
-              На данный момент мы разработали и протестировали мачту конусного типа и размещения на
-              ней технологической платформы что обеспечило покрытие цифровой связи на расстояние
-              более 20 км
-            </p>
+            <h3 className="text-3xl text-black font-bold leading-none mb-3">
+              {t('main.about.title')}
+            </h3>
+            <p className="text-gray-800 indent-8">{t('main.about.body1')}</p>
+            <p className="text-gray-800 mb-8 indent-8">{t('main.about.body2')}</p>
           </div>
           <div className="w-full sm:w-1/2 p-6">
             <img
@@ -41,11 +37,10 @@ const Main = () => {
           </div>
           <div className="w-full sm:w-1/2 p-6 mt-6">
             <div className="align-middle">
-              <h3 className="text-3xl text-black font-bold leading-none mb-3">Наши партнеры</h3>
-              <p className="text-gray-800 mb-8 indent-8">
-                Rtel Group участвует в модернизации и развитии цифровой связи в Казахстане совместно
-                с АО «НК «КТЖ», Hytera, HP, «БТ-сигнал», Группа компаний 1520, Транстелесофт.
-              </p>
+              <h3 className="text-3xl text-black font-bold leading-none mb-3">
+                {t('main.partners.title')}
+              </h3>
+              <p className="text-gray-800 mb-8 indent-8">{t('main.partners.body1')}</p>
             </div>
           </div>
         </div>

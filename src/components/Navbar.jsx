@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import NavbarLink from './NavbarLink';
 
 const catalogMenu = [
-  { link: '/catalog/tetra', name: 'DMR системы и терминалы' },
+  { link: '/catalog/tetra', name: 'catalog.tetra-systems.title' },
   {
     link: '/catalog/poc-solutions',
-    name: 'PoC-решения для оперативной связи поверх сети сотового оператора',
+    name: 'catalog.poc-solutions.title',
   },
 ];
 const solutionsMenu = [
