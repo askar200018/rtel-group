@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/rtel-group/static/css/main.70887081.css",
-    "main.js": "/rtel-group/static/js/main.5b9cbf0e.js",
+    "main.js": "/rtel-group/static/js/main.3ad1ea7b.js",
     "static/media/kz.svg": "/rtel-group/static/media/kz.b4cca5efe7e80d6b263b207a5251910f.svg",
     "static/media/poc.svg": "/rtel-group/static/media/poc.cbfa63907033fbd7f25d67658bb9b893.svg",
     "static/media/tetra.svg": "/rtel-group/static/media/tetra.e29e33ed47df757ca4d2742e8ecaf7a5.svg",
     "index.html": "/rtel-group/index.html",
     "static/media/ru.svg": "/rtel-group/static/media/ru.bfcf78f5e1dbe82b6947506aa4765577.svg",
     "main.70887081.css.map": "/rtel-group/static/css/main.70887081.css.map",
-    "main.5b9cbf0e.js.map": "/rtel-group/static/js/main.5b9cbf0e.js.map"
+    "main.3ad1ea7b.js.map": "/rtel-group/static/js/main.3ad1ea7b.js.map"
   },
   "entrypoints": [
     "static/css/main.70887081.css",
-    "static/js/main.5b9cbf0e.js"
+    "static/js/main.3ad1ea7b.js"
   ]
 }
