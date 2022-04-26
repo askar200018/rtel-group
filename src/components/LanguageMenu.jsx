@@ -1,15 +1,20 @@
 import { useState } from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
+import { ReactComponent as RuIcon } from '../assets/icons/ru.svg';
+import { ReactComponent as KzIcon } from '../assets/icons/kz.svg';
+import { changeLanguage } from 'i18next';
 
 const LanguageMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [activeLanguage, setActiveLanguage] = useState('en');
+
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = (language) => {
     setActiveLanguage(language);
+    changeLanguage(language);
     setAnchorEl(null);
   };
 
@@ -27,7 +32,15 @@ const LanguageMenu = () => {
           color: 'white',
           fontWeight: 'normal',
         }}>
-        {activeLanguage === 'ru' ? 'Русский 🇷🇺' : 'English 🇺🇸'}
+        {activeLanguage === 'ru' ? (
+          <div className="flex items-center">
+            Rus <RuIcon className="h-4 w-4 ml-2" />
+          </div>
+        ) : (
+          <div className="flex items-center">
+            Kaz <KzIcon className="h-4 w-4 ml-2" />
+          </div>
+        )}
       </Button>
       <Menu
         id="basic-menu"
@@ -37,8 +50,12 @@ const LanguageMenu = () => {
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}>
-        <MenuItem onClick={() => handleClose('ru')}>Русский 🇷🇺</MenuItem>
-        <MenuItem onClick={() => handleClose('en')}>English 🇺🇸</MenuItem>
+        <MenuItem onClick={() => handleClose('kz')}>
+          Kaz <KzIcon className="h-4 w-4 ml-2" />
+        </MenuItem>
+        <MenuItem onClick={() => handleClose('ru')}>
+          Rus <RuIcon className="h-4 w-4 ml-2" />
+        </MenuItem>
       </Menu>
     </div>
   );
