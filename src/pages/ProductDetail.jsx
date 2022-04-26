@@ -1,12 +1,14 @@
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { doc, getDoc } from 'firebase/firestore/lite';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { db } from '../firebase';
 import { HeaderHeight } from '../variables/vairables';
 
 const ProductDetail = () => {
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   const categoryId = useParams().categoryId;
   const productId = useParams().productId;
@@ -67,16 +69,16 @@ const ProductDetail = () => {
             </div>
             <div className="flex-1">
               <Typography variant="h5" align="center" sx={{ marginBottom: '16px' }}>
-                ОПИСАНИЕ
+                {t('product.description')}
               </Typography>
               <Divider sx={{ marginBottom: '16px' }} />
               <Typography variant="subtitle1" sx={{ marginBottom: '8px' }}>
-                {product.description.title}
+                {product.description[`title_${i18n.language}`]}
               </Typography>
               <ul className="list-disc pl-4">
                 <li>
                   <Typography variant="body2" sx={{ marginBottom: '8px' }}>
-                    {product.description.body}
+                    {product.description[`body_${i18n.language}`]}
                   </Typography>
                 </li>
               </ul>
@@ -89,14 +91,14 @@ const ProductDetail = () => {
           <div className="flex space-x-8">
             <div className="flex-1">
               <Typography variant="h5" align="center" sx={{ marginBottom: '16px' }}>
-                ОСОБЕННОСТИ
+                {t('product.features')}
               </Typography>
               <Divider sx={{ marginBottom: '16px' }} />
               <ul className="list-disc pl-4">
                 {product.features.map((feature, i) => (
                   <li key={i}>
                     <Typography variant="body2" className="text-gray-600">
-                      {feature}
+                      {feature[`text_${i18n.language}`]}
                     </Typography>
                   </li>
                 ))}
@@ -104,11 +106,11 @@ const ProductDetail = () => {
             </div>
             <div className="flex-1">
               <Typography variant="h5" align="center" sx={{ marginBottom: '16px' }}>
-                ХАРАКТЕРИСТИКИ
+                {t('product.characteristics')}
               </Typography>
               <Divider sx={{ marginBottom: '16px' }} />
               <Typography variant="subtitle1" sx={{ marginBottom: '16px' }}>
-                Основные технические характеристики
+                {t('product.main-characteristics')}
               </Typography>
               <ul>
                 {product.characteristics.map((item, i) => (
@@ -116,12 +118,12 @@ const ProductDetail = () => {
                     <div className="flex space-x-4 mb-1">
                       <div style={{ minWidth: '40%', maxWidth: '40%' }}>
                         <Typography variant="body2" className="text-gray-600">
-                          {item.key}
+                          {item[`key_${i18n.language}`]}
                         </Typography>
                       </div>
                       <div>
                         <Typography variant="body2" className="text-gray-600">
-                          {item.value}
+                          {item[`value_${i18n.language}`]}
                         </Typography>
                       </div>
                     </div>

@@ -87,4 +87,10 @@ export const TRANSLATION_KZ = {
       },
     },
   },
+  product: {
+    description: 'СИПАТТАМАСЫ',
+    features: 'ЕРЕКШЕЛІКТЕРІ',
+    characteristics: 'СИПАТТАМАЛАРЫ',
+    'main-characteristics': 'Негізгі техникалық сипаттамалары',
+  },
 };

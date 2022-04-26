@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { changeLanguage } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { ReactComponent as RuIcon } from '../assets/icons/ru.svg';
 import { ReactComponent as KzIcon } from '../assets/icons/kz.svg';
-import { changeLanguage } from 'i18next';
 
 const LanguageMenu = () => {
+  const { t, i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = useState(null);
-  const [activeLanguage, setActiveLanguage] = useState('en');
+  const [activeLanguage, setActiveLanguage] = useState(i18n.language);
 
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

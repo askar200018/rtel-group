@@ -87,4 +87,10 @@ export const TRANSLATION_RU = {
       },
     },
   },
+  product: {
+    description: 'ОПИСАНИЕ',
+    features: 'ОСОБЕННОСТИ',
+    characteristics: 'ХАРАКТЕРИСТИКИ',
+    'main-characteristics': 'Основные технические характеристики',
+  },
 };
