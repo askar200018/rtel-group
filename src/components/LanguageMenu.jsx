@@ -48,7 +48,6 @@ const LanguageMenu = () => {
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}>
