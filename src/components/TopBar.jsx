@@ -6,7 +6,7 @@ import LanguageMenu from './LanguageMenu';
 const TopBar = () => {
   const { t } = useTranslation();
   return (
-    <div className="py-2 bg-black">
+    <div className="py-2 bg-gray-900">
       <Container
         maxWidth="xl"
         sx={{
