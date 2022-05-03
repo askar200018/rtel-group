@@ -2,7 +2,7 @@ import { Box, Container, Divider, Typography } from '@mui/material';
 import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl from '!mapbox-gl';
-import { HeaderHeight } from '../variables/vairables';
+import { HeaderHeight } from '../variables/variables';
 import { MARKERS } from '../mock/markers';
 import Popup from '../components/Popup';
 import { HashRouter } from 'react-router-dom';

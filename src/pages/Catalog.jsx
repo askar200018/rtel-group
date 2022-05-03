@@ -2,7 +2,7 @@ import { Box, Container, Divider, Typography } from '@mui/material';
 import CatalogItem from '../components/CatalogItem';
 import { ReactComponent as TetraIcon } from '../assets/icons/tetra.svg';
 import { ReactComponent as PocIcon } from '../assets/icons/poc.svg';
-import { HeaderHeight } from '../variables/vairables';
+import { HeaderHeight } from '../variables/variables';
 
 const Catalog = () => {
   return (

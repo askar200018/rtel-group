@@ -1,7 +1,7 @@
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { HeaderHeight } from '../variables/vairables';
+import { HeaderHeight } from '../variables/variables';
 
 import 'swiper/css';
 import 'swiper/css/navigation';

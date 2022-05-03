@@ -1,4 +1,4 @@
-import { HeaderHeight } from '../variables/vairables';
+import { HeaderHeight } from '../variables/variables';
 
 const NotFound = () => {
   return (

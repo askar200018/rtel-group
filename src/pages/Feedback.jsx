@@ -10,7 +10,7 @@ import {
 import { useForm } from 'react-hook-form';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { HeaderHeight } from '../variables/vairables';
+import { HeaderHeight } from '../variables/variables';
 
 const Feedback = () => {
   const { register, handleSubmit } = useForm();

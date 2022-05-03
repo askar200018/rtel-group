@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { db } from '../firebase';
 import { CATEGORIES } from '../mock/mock';
-import { HeaderHeight } from '../variables/vairables';
+import { HeaderHeight } from '../variables/variables';
 
 const CatalogDetail = () => {
   const categoryName = useParams().categoryName;
