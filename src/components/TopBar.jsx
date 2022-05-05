@@ -13,7 +13,7 @@ const TopBar = () => {
           fontFamily: 'Roboto, sans-serif',
         }}>
         <ul className="flex justify-end space-x-4">
-          <NavbarLink linkTo="/catalog" name={t('navbar.Контакты')}></NavbarLink>
+          <NavbarLink linkTo="/contacts" name={t('navbar.Контакты')}></NavbarLink>
           <li className="w-20">
             <LanguageMenu />
           </li>
