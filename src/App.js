@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import TestComponent from './components/TestComponent';
 import Tetra from './pages/Tetra';
 import Catalog from './pages/Catalog';
 import Main from './pages/Main';
@@ -37,7 +36,6 @@ const App = () => {
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/create" element={<CreateProduct />} />
         <Route path="/contacts" element={<Contacts />} />
-        <Route path="/about" element={<TestComponent />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

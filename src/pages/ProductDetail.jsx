@@ -73,14 +73,17 @@ const ProductDetail = () => {
               </Typography>
               <Divider sx={{ marginBottom: '16px' }} />
               <Typography variant="subtitle1" sx={{ marginBottom: '8px' }}>
-                {product.description[`title_${i18n.language}`]}
+                {product.description[`name_${i18n.language}`]}
               </Typography>
               <ul className="list-disc pl-4">
-                <li>
+                {product.description[`rows_${i18n.language}`].map((row, i) => (
+                  <li key={i}>{row}</li>
+                ))}
+                {/* <li>
                   <Typography variant="body2" sx={{ marginBottom: '8px' }}>
                     {product.description[`body_${i18n.language}`]}
                   </Typography>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -95,10 +98,10 @@ const ProductDetail = () => {
               </Typography>
               <Divider sx={{ marginBottom: '16px' }} />
               <ul className="list-disc pl-4">
-                {product.features.map((feature, i) => (
+                {product.feature[`rows_${i18n.language}`].map((row, i) => (
                   <li key={i}>
                     <Typography variant="body2" className="text-gray-600">
-                      {feature[`text_${i18n.language}`]}
+                      {row}
                     </Typography>
                   </li>
                 ))}
@@ -109,28 +112,34 @@ const ProductDetail = () => {
                 {t('product.characteristics')}
               </Typography>
               <Divider sx={{ marginBottom: '16px' }} />
-              <Typography variant="subtitle1" sx={{ marginBottom: '16px' }}>
-                {t('product.main-characteristics')}
-              </Typography>
-              <ul>
-                {product.characteristics.map((item, i) => (
-                  <li key={i} className="mb-1">
-                    <div className="flex space-x-4 mb-1">
-                      <div style={{ minWidth: '40%', maxWidth: '40%' }}>
-                        <Typography variant="body2" className="text-gray-600">
-                          {item[`key_${i18n.language}`]}
-                        </Typography>
-                      </div>
-                      <div>
-                        <Typography variant="body2" className="text-gray-600">
-                          {item[`value_${i18n.language}`]}
-                        </Typography>
-                      </div>
-                    </div>
-                    <Divider />
-                  </li>
+              <div>
+                {product.characteristics.map((item) => (
+                  <div key={item.id}>
+                    <Typography variant="subtitle1" sx={{ marginBottom: '16px' }}>
+                      {item[`name_${i18n.language}`]}
+                    </Typography>
+                    <ul>
+                      {item[`rows_${i18n.language}`].map((row, i) => (
+                        <li key={i} className="mb-1">
+                          <div className="flex space-x-4 mb-1">
+                            <div style={{ minWidth: '40%', maxWidth: '40%' }}>
+                              <Typography variant="body2" className="text-gray-600">
+                                {row.key}
+                              </Typography>
+                            </div>
+                            <div>
+                              <Typography variant="body2" className="text-gray-600">
+                                {row.value}
+                              </Typography>
+                            </div>
+                          </div>
+                          <Divider />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </Container>
