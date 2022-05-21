@@ -48,22 +48,31 @@ const Feedback = () => {
       <Container maxWidth="sm">
         <form ref={form} onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
-            <TextField {...register('fullName')} fullWidth label="Full name" id="fullName" />
+            <TextField {...register('firstName')} fullWidth label="Имя" id="firstName" />
+          </div>
+          <div className="mb-4">
+            <TextField {...register('lastName')} fullWidth label="Фамилия" id="lastName" />
           </div>
           <div className="mb-4">
             <TextField
-              {...register('from_name')}
+              {...register('email')}
               fullWidth
-              label="Email"
-              id="from_name"
+              label="Адрес электронной почты "
+              id="email"
               type="email"
             />
           </div>
           <div className="mb-4">
-            <TextField {...register('company')} fullWidth label="Company" id="company" />
+            <TextField {...register('company')} fullWidth label="Компания" id="company" />
           </div>
           <div className="mb-4">
-            <TextField {...register('message')} fullWidth label="Title" id="message" />
+            <TextField {...register('position')} fullWidth label="Должность" id="position" />
+          </div>
+          <div className="mb-4">
+            <TextField {...register('region')} fullWidth label="Область (РК)" id="region" />
+          </div>
+          <div className="mb-4">
+            <TextField {...register('phoneNumber')} fullWidth label="Телефон" id="phoneNumber" />
           </div>
           <div className="mb-4">
             <Typography>Описание</Typography>
