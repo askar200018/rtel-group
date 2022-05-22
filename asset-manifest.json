@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/rtel-group/static/css/main.29875d84.css",
-    "main.js": "/rtel-group/static/js/main.4277096c.js",
+    "main.css": "/rtel-group/static/css/main.c97dffb8.css",
+    "main.js": "/rtel-group/static/js/main.b4865120.js",
     "static/media/kz.svg": "/rtel-group/static/media/kz.b4cca5efe7e80d6b263b207a5251910f.svg",
     "static/media/telegram-cloud-photo-size-2--x": "/rtel-group/static/media/telegram-cloud-photo-size-2-5210851557451611010-x.3560bcfa166ad35b75b8",
     "static/media/poc.svg": "/rtel-group/static/media/poc.cbfa63907033fbd7f25d67658bb9b893.svg",
     "static/media/tetra.svg": "/rtel-group/static/media/tetra.e29e33ed47df757ca4d2742e8ecaf7a5.svg",
     "index.html": "/rtel-group/index.html",
     "static/media/ru.svg": "/rtel-group/static/media/ru.bfcf78f5e1dbe82b6947506aa4765577.svg",
-    "main.29875d84.css.map": "/rtel-group/static/css/main.29875d84.css.map",
-    "main.4277096c.js.map": "/rtel-group/static/js/main.4277096c.js.map"
+    "main.c97dffb8.css.map": "/rtel-group/static/css/main.c97dffb8.css.map",
+    "main.b4865120.js.map": "/rtel-group/static/js/main.b4865120.js.map"
   },
   "entrypoints": [
-    "static/css/main.29875d84.css",
-    "static/js/main.4277096c.js"
+    "static/css/main.c97dffb8.css",
+    "static/js/main.b4865120.js"
   ]
 }
