@@ -75,7 +75,7 @@ const Projects = () => {
           paddingY: '32px',
         }}>
         <Typography variant="h4" align="center" sx={{ marginBottom: '16px' }}>
-          Проекты - {i18n.language}
+          Проекты
         </Typography>
         <Container maxWidth="xl">
           <Divider variant="middle" />
