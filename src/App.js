@@ -19,6 +19,7 @@ import LegalInfo from './pages/LegalInfo';
 import CreateMarker from './pages/CreateMarker';
 
 import './style.scss';
+import Login from './pages/Login';
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/create-marker" element={<CreateMarker />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/legal-info" element={<LegalInfo />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

@@ -1,14 +1,15 @@
-import { Box, Container, Divider, Typography } from '@mui/material';
+import { Box, Button, Container, Divider, Typography } from '@mui/material';
 import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl from '!mapbox-gl';
 import { HeaderHeight } from '../variables/variables';
 import Popup from '../components/Popup';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, Link } from 'react-router-dom';
 import { collection, getDocs, query } from 'firebase/firestore/lite';
 import { db } from '../firebase';
 import { useTranslation } from 'react-i18next';
 import '../i18n';
+import { isAuthorized } from '../helpers/auth';
 
 mapboxgl.accessToken =
   'pk.eyJ1Ijoib3NrYXItYWdhIiwiYSI6ImNsMmF2aDlkdDA3NzIza25yZTB6cGlsY3gifQ.Ma1eN-_aYN5AHkewOnTR5A';
@@ -16,6 +17,7 @@ mapboxgl.accessToken =
 const Projects = () => {
   const { t, i18n } = useTranslation();
 
+  const isAuthorize = isAuthorized();
   const mapContainer = useRef(null);
   const map = useRef(null);
 
@@ -79,10 +81,17 @@ const Projects = () => {
           <Divider variant="middle" />
         </Container>
       </Box>
-      <Container sx={{ position: 'relative' }}>
+      <Container sx={{ position: 'relative', paddingBottom: '32px' }}>
         <div style={{ height: '520px', width: '100%' }} className="pb-8">
           <div ref={mapContainer} className="map-container" style={{ height: '100%' }} />
         </div>
+        {isAuthorize && (
+          <div className="flex justify-end">
+            <Button>
+              <Link to="/create-marker">Добавить метку</Link>
+            </Button>
+          </div>
+        )}
       </Container>
     </div>
   );
