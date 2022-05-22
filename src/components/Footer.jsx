@@ -1,17 +1,12 @@
+import logo from '../assets/images/logo.jpg';
+
 const Footer = () => {
   return (
     <footer className="py-8 bg-gray-800">
       <div className="flex justify-between container mx-auto">
         <div>
           <a href="https://flowbite.com" className="flex items-center">
-            <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="mr-3 h-8"
-              alt="FlowBite Logo"
-            />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Rtel Group
-            </span>
+            <img src={logo} alt="Logo" height={36} className="h-[36px]" />
           </a>
         </div>
         <div className="flex space-x-8">

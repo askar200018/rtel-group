@@ -2,6 +2,7 @@ import { Container } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import NavbarLink from './NavbarLink';
+import logo from '../assets/images/logo.jpg';
 
 const catalogMenu = [
   { link: '/catalog/tetra', name: 'catalog.tetra-systems.title' },
@@ -31,12 +32,7 @@ const Navbar = () => {
         <nav className="flex justify-between">
           <div>
             <Link to="/" className="flex items-center text-xl font-medium text-white" variant="h6">
-              <img
-                src="https://flowbite.com/docs/images/logo.svg"
-                className="mr-3 h-6 sm:h-9"
-                alt="Flowbite Logo"
-              />
-              Rtel Group
+              <img src={logo} alt="Logo" height={36} className="h-[36px]" />
             </Link>
           </div>
           <ul className="flex items-center space-x-8">
