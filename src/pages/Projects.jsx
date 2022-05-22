@@ -3,21 +3,27 @@ import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl from '!mapbox-gl';
 import { HeaderHeight } from '../variables/variables';
-import { MARKERS } from '../mock/markers';
 import Popup from '../components/Popup';
 import { HashRouter } from 'react-router-dom';
+import { collection, getDocs, query } from 'firebase/firestore/lite';
+import { db } from '../firebase';
+import { useTranslation } from 'react-i18next';
+import '../i18n';
 
 mapboxgl.accessToken =
   'pk.eyJ1Ijoib3NrYXItYWdhIiwiYSI6ImNsMmF2aDlkdDA3NzIza25yZTB6cGlsY3gifQ.Ma1eN-_aYN5AHkewOnTR5A';
 
 const Projects = () => {
+  const { t, i18n } = useTranslation();
+
   const mapContainer = useRef(null);
   const map = useRef(null);
+
   const [lng, setLng] = useState(66.9237);
   const [lat, setLat] = useState(48.0196);
   const [zoom, setZoom] = useState(4);
 
-  useEffect(() => {
+  useEffect(async () => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -27,11 +33,13 @@ const Projects = () => {
     });
 
     map.current.addControl(new mapboxgl.NavigationControl());
-    MARKERS.forEach((marker) => {
+
+    const markers = await getMarkers();
+    markers.forEach((marker) => {
       const popupNode = document.createElement('div');
       ReactDOM.render(
         <HashRouter>
-          <Popup marker={marker} />
+          <Popup marker={marker} language={i18n.language} />
         </HashRouter>,
         popupNode,
       );
@@ -47,6 +55,14 @@ const Projects = () => {
     });
   }, []);
 
+  const getMarkers = async () => {
+    const q = query(collection(db, 'markers'));
+    const querySnapshot = await getDocs(q);
+
+    const markers = querySnapshot.docs.map((doc) => doc.data());
+    return markers;
+  };
+
   return (
     <div
       style={{
@@ -57,7 +73,7 @@ const Projects = () => {
           paddingY: '32px',
         }}>
         <Typography variant="h4" align="center" sx={{ marginBottom: '16px' }}>
-          Проекты
+          Проекты - {i18n.language}
         </Typography>
         <Container maxWidth="xl">
           <Divider variant="middle" />

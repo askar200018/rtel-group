@@ -16,6 +16,7 @@ import Feedback from './pages/Feedback';
 import CreateProduct from './pages/CreateProduct';
 import Contacts from './pages/Contacts';
 import LegalInfo from './pages/LegalInfo';
+import CreateMarker from './pages/CreateMarker';
 
 import './style.scss';
 
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/create" element={<CreateProduct />} />
+        <Route path="/create-marker" element={<CreateMarker />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/legal-info" element={<LegalInfo />} />
         <Route path="*" element={<NotFound />} />

@@ -15,6 +15,8 @@ const LanguageMenu = () => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = (language) => {
+    localStorage.setItem('activeLanguage', language);
+    window.location.reload();
     setActiveLanguage(language);
     changeLanguage(language);
     setAnchorEl(null);

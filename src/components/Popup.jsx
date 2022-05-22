@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
-const Popup = ({ marker }) => {
+const Popup = ({ marker, language }) => {
   return (
     <div>
-      <h4 className="text-base text-gray-800">Использованные оборудования:</h4>
+      <h4 className="text-base text-gray-800">Использованные оборудования: - {language}</h4>
       <ul>
-        {marker.equipments.map((equipment) => (
+        {marker[`equipments_${language}`].map((equipment) => (
           <li key={equipment.text}>
             <Link
               to={equipment.link}
@@ -18,10 +18,10 @@ const Popup = ({ marker }) => {
       </ul>
       <h4 className="text-base text-gray-800">Решения:</h4>
       <Link
-        to={marker.solution.link}
+        to={marker[`solution_${language}`].link}
         className="text-blue-800 hover:underline outline-none"
         target="_blank">
-        {marker.solution.text}
+        {marker[`solution_${language}`].text}
       </Link>
     </div>
   );
