@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Popup = ({ marker, language }) => {
   return (
     <div>
-      <h4 className="text-base text-gray-800">Использованные оборудования: - {language}</h4>
+      <h4 className="text-base text-gray-800">Использованные оборудования:</h4>
       <ul>
         {marker[`equipments_${language}`].map((equipment) => (
           <li key={equipment.text}>
