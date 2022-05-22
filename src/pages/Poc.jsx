@@ -90,7 +90,7 @@ const PocSolutions = () => {
               title={t('catalog.poc-solutions.sections.section2')}
             />
             <SectionCard
-              linkTo="/test"
+              linkTo="/hytera-hytalk"
               imgLink="https://www.hytera.ru/upload/resize_cache/webp/poc/Hytalk/img/wx.webp"
               alt="TETRA терминалы"
               title={t('catalog.poc-solutions.sections.section3')}

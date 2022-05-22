@@ -17,9 +17,10 @@ import CreateProduct from './pages/CreateProduct';
 import Contacts from './pages/Contacts';
 import LegalInfo from './pages/LegalInfo';
 import CreateMarker from './pages/CreateMarker';
+import HyteraHytalk from './pages/HyteraHytalk';
+import Login from './pages/Login';
 
 import './style.scss';
-import Login from './pages/Login';
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ const App = () => {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/legal-info" element={<LegalInfo />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/hytera-hytalk" element={<HyteraHytalk />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

@@ -1,8 +1,6 @@
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import { HeaderHeight } from '../variables/variables';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Button, Container, Divider, Typography } from '@mui/material';
@@ -36,26 +34,28 @@ const Solutions = () => {
                 backgroundImage:
                   'url("https://www.hytera.ru/upload/resize_cache/webp/iblock/76d/76db6bbf5dfba0d15776dbaa0e8ce5a1.webp")',
               }}>
-              <Link to="/solutions/smart-tower">
+              <div>
                 <Typography variant="h4" className="text-white" sx={{ marginBottom: '16px' }}>
                   Smart tower
                 </Typography>
-                <Button
-                  variant="contained"
-                  size="large"
-                  className="bg-gray-800"
-                  sx={{
-                    borderRadius: '8px',
-                    marginTop: 'auto',
-                    backgroundColor: '#1f2937',
-                    '&:hover': {
+                <Link to="/solutions/smart-tower">
+                  <Button
+                    variant="contained"
+                    size="large"
+                    className="bg-gray-800"
+                    sx={{
+                      borderRadius: '8px',
+                      marginTop: 'auto',
                       backgroundColor: '#1f2937',
-                      opacity: 0.9,
-                    },
-                  }}>
-                  Подробнее
-                </Button>
-              </Link>
+                      '&:hover': {
+                        backgroundColor: '#1f2937',
+                        opacity: 0.9,
+                      },
+                    }}>
+                    Подробнее
+                  </Button>
+                </Link>
+              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
@@ -65,26 +65,28 @@ const Solutions = () => {
                 backgroundImage:
                   'url("https://www.hytera.ru/upload/resize_cache/webp/iblock/76d/76db6bbf5dfba0d15776dbaa0e8ce5a1.webp")',
               }}>
-              <Link to="/solutions/cybe-rr">
+              <div>
                 <Typography variant="h4" className="text-white" sx={{ marginBottom: '16px' }}>
                   Cybe-RR
                 </Typography>
-                <Button
-                  variant="contained"
-                  size="large"
-                  className="bg-gray-800"
-                  sx={{
-                    borderRadius: '8px',
-                    marginTop: 'auto',
-                    backgroundColor: '#1f2937',
-                    '&:hover': {
+                <Link to="/solutions/cybe-rr">
+                  <Button
+                    variant="contained"
+                    size="large"
+                    className="bg-gray-800"
+                    sx={{
+                      borderRadius: '8px',
+                      marginTop: 'auto',
                       backgroundColor: '#1f2937',
-                      opacity: 0.9,
-                    },
-                  }}>
-                  Подробнее
-                </Button>
-              </Link>
+                      '&:hover': {
+                        backgroundColor: '#1f2937',
+                        opacity: 0.9,
+                      },
+                    }}>
+                    Подробнее
+                  </Button>
+                </Link>
+              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
@@ -94,26 +96,28 @@ const Solutions = () => {
                 backgroundImage:
                   'url("https://www.hytera.ru/upload/resize_cache/webp/iblock/76d/76db6bbf5dfba0d15776dbaa0e8ce5a1.webp")',
               }}>
-              <Link to="/solutions/hytalk">
+              <div>
                 <Typography variant="h4" className="text-white" sx={{ marginBottom: '16px' }}>
                   Hytalk
                 </Typography>
-                <Button
-                  variant="contained"
-                  size="large"
-                  className="bg-gray-800"
-                  sx={{
-                    borderRadius: '8px',
-                    marginTop: 'auto',
-                    backgroundColor: '#1f2937',
-                    '&:hover': {
+                <Link to="/solutions/hytalk">
+                  <Button
+                    variant="contained"
+                    size="large"
+                    className="bg-gray-800"
+                    sx={{
+                      borderRadius: '8px',
+                      marginTop: 'auto',
                       backgroundColor: '#1f2937',
-                      opacity: 0.9,
-                    },
-                  }}>
-                  Подробнее
-                </Button>
-              </Link>
+                      '&:hover': {
+                        backgroundColor: '#1f2937',
+                        opacity: 0.9,
+                      },
+                    }}>
+                    Подробнее
+                  </Button>
+                </Link>
+              </div>
             </div>
           </SwiperSlide>
         </Swiper>
