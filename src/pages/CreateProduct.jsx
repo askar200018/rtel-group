@@ -138,6 +138,22 @@ const TestPage = () => {
     setCharacteristics([...characteristics, newCharacteristic]);
   };
 
+  const handleRemoveCharacteristic = (id) => {
+    setCharacteristics(characteristics.filter((characteristic) => characteristic.id !== id));
+  };
+
+  const handleEditCharacteristic = (updatedCharacteristic) => {
+    console.log({ updatedCharacteristic });
+    setCharacteristics(
+      characteristics.map((characteristic) => {
+        if (characteristic.id !== updatedCharacteristic.id) {
+          return characteristic;
+        }
+        return { ...characteristic, ...updatedCharacteristic };
+      }),
+    );
+  };
+
   return (
     <div
       style={{
@@ -294,6 +310,8 @@ const TestPage = () => {
           <CharacteristicsTab
             characteristics={characteristics}
             handleAddCharacteristic={handleAddCharacteristic}
+            handleRemoveCharacteristic={handleRemoveCharacteristic}
+            handleEditCharacteristic={handleEditCharacteristic}
           />
         </TabPanel>
         <div>

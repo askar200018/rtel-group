@@ -1,13 +1,44 @@
-import { Button, Divider, TextareaAutosize, TextField, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Divider,
+  Modal,
+  TextareaAutosize,
+  TextField,
+  Typography,
+} from '@mui/material';
 import { useState } from 'react';
+import EditProductDialog from './EditProductDialog';
 
-const CharacteristicsTab = ({ characteristics, handleAddCharacteristic }) => {
+const CharacteristicsTab = ({
+  characteristics,
+  handleAddCharacteristic,
+  handleRemoveCharacteristic,
+  handleEditCharacteristic,
+}) => {
   const maxId = Math.max(...characteristics.map((c) => c.id)) | 0;
 
   const [nameKz, setNameKz] = useState('');
   const [nameRu, setNameRu] = useState('');
   const [characteristicsKz, setCharacteristicsKz] = useState('');
   const [characteristicsRu, setCharacteristicsRu] = useState('');
+
+  const [characteristicToEdit, setCharacteristicToEdit] = useState(null);
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = (id) => {
+    setCharacteristicToEdit(characteristics.find((item) => item.id === id));
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const getMappedRows = (rows) => {
     return rows
@@ -32,15 +63,25 @@ const CharacteristicsTab = ({ characteristics, handleAddCharacteristic }) => {
 
     const characteristic = {
       id: maxId + 1,
-      name_ru: nameKz,
-      name_kz: nameRu,
+      name_ru: nameRu,
+      name_kz: nameKz,
       rows_ru: rowsRu,
       rows_kz: rowsKz,
     };
 
     handleAddCharacteristic(characteristic);
-    console.log({ characteristic });
+    console.log({ characteristic, characteristics });
     resetValues();
+  };
+
+  const removeCharacteristic = (id) => {
+    handleRemoveCharacteristic(id);
+    console.log({ id });
+    console.log({ characteristics });
+  };
+
+  const editCharacteristic = (characteristic) => {
+    handleEditCharacteristic(characteristic);
   };
 
   return (
@@ -105,7 +146,7 @@ const CharacteristicsTab = ({ characteristics, handleAddCharacteristic }) => {
             <Typography variant="h6">
               {item.name_ru} - {item.name_kz}
             </Typography>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-4">
               <ul>
                 {item.rows_ru.map((row, i) => (
                   <li key={i}>
@@ -121,10 +162,27 @@ const CharacteristicsTab = ({ characteristics, handleAddCharacteristic }) => {
                 ))}
               </ul>
             </div>
+            <div className="flex space-x-4">
+              <Button
+                variant="contained"
+                color="error"
+                onClick={() => removeCharacteristic(item.id)}>
+                Remove
+              </Button>
+              <Button variant="contained" color="primary" onClick={() => handleOpen(item.id)}>
+                Edit
+              </Button>
+            </div>
             <Divider sx={{ marginY: '8px' }} />
           </li>
         ))}
       </ul>
+      <EditProductDialog
+        open={open}
+        characteristic={characteristicToEdit}
+        handleClose={handleClose}
+        handleEdit={editCharacteristic}
+      />
     </div>
   );
 };
