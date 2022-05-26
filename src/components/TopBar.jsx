@@ -21,6 +21,7 @@ const TopBar = () => {
           </ul>
           <ul className="flex justify-end space-x-4">
             <NavbarLink linkTo="/legal-info" name={t('navbar.Юринфо')}></NavbarLink>
+            <NavbarLink linkTo="/support" name={t('navbar.ТехПоддержка')}></NavbarLink>
             <NavbarLink linkTo="/contacts" name={t('navbar.Контакты')}></NavbarLink>
             <li className="w-20">
               <LanguageMenu />

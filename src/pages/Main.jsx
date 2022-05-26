@@ -22,7 +22,7 @@ const Main = () => {
         </div>
         <div className="flex flex-wrap mb-8">
           <div className="w-5/6 sm:w-1/2 p-6">
-            <h3 className="text-3xl text-black font-bold leading-none mb-3">
+            <h3 className="text-3xl text-black font-bold leading-none text-center mb-3">
               {t('main.about.title')}
             </h3>
             <p className="text-gray-800 indent-8">{t('main.about.body1')}</p>

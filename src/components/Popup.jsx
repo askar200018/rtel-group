@@ -1,6 +1,9 @@
+import { Button, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
-const Popup = ({ marker, language }) => {
+const Popup = ({ marker, language, isAuthorized }) => {
   return (
     <div>
       <h4 className="text-base text-gray-800">Использованные оборудования:</h4>
@@ -23,6 +26,20 @@ const Popup = ({ marker, language }) => {
         target="_blank">
         {marker[`solution_${language}`].text}
       </Link>
+      {isAuthorized && (
+        <div className="flex justify-end space-x-2">
+          <Link to="/create">
+            <IconButton color="primary" aria-label="upload picture" component="span">
+              <EditIcon />
+            </IconButton>
+          </Link>
+          <Link to="/create">
+            <IconButton color="error" aria-label="upload picture" component="span">
+              <DeleteIcon />
+            </IconButton>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

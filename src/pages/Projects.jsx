@@ -41,7 +41,7 @@ const Projects = () => {
       const popupNode = document.createElement('div');
       ReactDOM.render(
         <HashRouter>
-          <Popup marker={marker} language={i18n.language} />
+          <Popup isAuthorized={isAuthorize} marker={marker} language={i18n.language} />
         </HashRouter>,
         popupNode,
       );
