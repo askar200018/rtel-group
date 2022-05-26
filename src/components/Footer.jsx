@@ -1,11 +1,12 @@
-import logo from '../assets/images/logo.jpg';
+import { Typography } from '@mui/material';
+import logo from '../assets/images/logo.png';
 
 const Footer = () => {
   return (
     <footer className="py-8 bg-gray-800">
       <div className="flex justify-between container mx-auto">
         <div>
-          <a href="https://flowbite.com" className="flex items-center">
+          <a href="https://flowbite.com" className="flex flex-col items-center text-white">
             <img src={logo} alt="Logo" height={36} className="h-[36px]" />
           </a>
         </div>

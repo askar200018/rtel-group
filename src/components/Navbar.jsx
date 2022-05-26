@@ -1,8 +1,8 @@
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import NavbarLink from './NavbarLink';
-import logo from '../assets/images/logo.jpg';
+import logo from '../assets/images/logo.png';
 
 const catalogMenu = [
   { link: '/catalog/tetra', name: 'catalog.tetra-systems.title' },
@@ -31,8 +31,12 @@ const Navbar = () => {
       <Container maxWidth="xl">
         <nav className="flex justify-between">
           <div>
-            <Link to="/" className="flex items-center text-xl font-medium text-white" variant="h6">
+            <Link
+              to="/"
+              className="flex flex-col items-center text-xl font-medium text-white"
+              variant="h6">
               <img src={logo} alt="Logo" height={36} className="h-[36px]" />
+              <Typography variant="caption">Оператор профессиональной радиосвязи</Typography>
             </Link>
           </div>
           <ul className="flex items-center space-x-8">
