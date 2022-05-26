@@ -13,7 +13,7 @@ import { getMappedRows } from '../helpers/mapping';
 
 const EditProductDialog = ({ open, handleClose, characteristic, handleEdit }) => {
   if (!characteristic) {
-    return <div>Empty</div>;
+    return <div></div>;
   }
 
   const getCharacteristicText = (rows) => {

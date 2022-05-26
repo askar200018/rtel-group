@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import { collection, doc, getDoc, setDoc } from 'firebase/firestore/lite';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CharacteristicsTab from '../components/CharacteristicsTab';
 import TabPanel from '../components/TabPanel';
 import { db } from '../firebase';
@@ -49,25 +50,42 @@ const CATEGORIES = [
   },
 ];
 
-const TestPage = () => {
-  const [categoryName, setCategoryName] = useState('');
+const CreateProduct = ({
+  initialId = null,
+  initialCategoryName = '',
+  initialName = '',
+  initialSubtitleKz = '',
+  initialSubtitleRu = '',
+  initialImg = '',
+  initialFeatureImg = '',
+  initialDescriptionNameRu = '',
+  initialDescriptionNameKz = '',
+  initialDescriptionRu = '',
+  initialDescriptionKz = '',
+  initialFeaturesKz = '',
+  initialFeaturesRu = '',
+  initialCharacteristics = [],
+}) => {
+  const navigate = useNavigate();
+
+  const [categoryName, setCategoryName] = useState(initialCategoryName);
   const [value, setValue] = useState(0);
-  const [name, setName] = useState('');
-  const [subtitleKz, setSubtitleKz] = useState('');
-  const [subtitleRu, setSubtitleRu] = useState('');
+  const [name, setName] = useState(initialName);
+  const [subtitleKz, setSubtitleKz] = useState(initialSubtitleKz);
+  const [subtitleRu, setSubtitleRu] = useState(initialSubtitleRu);
 
-  const [img, setImg] = useState('');
-  const [featureImg, setFeatureImg] = useState('');
+  const [img, setImg] = useState(initialImg);
+  const [featureImg, setFeatureImg] = useState(initialFeatureImg);
 
-  const [descriptionNameRu, setDescriptionNameRu] = useState('');
-  const [descriptionNameKz, setDescriptionNameKz] = useState('');
-  const [descriptionKz, setDescriptionKz] = useState('');
-  const [descriptionRu, setDescriptionRu] = useState('');
+  const [descriptionNameRu, setDescriptionNameRu] = useState(initialDescriptionNameRu);
+  const [descriptionNameKz, setDescriptionNameKz] = useState(initialDescriptionNameKz);
+  const [descriptionRu, setDescriptionRu] = useState(initialDescriptionRu);
+  const [descriptionKz, setDescriptionKz] = useState(initialDescriptionKz);
 
-  const [featuresKz, setFeaturesKz] = useState('');
-  const [featuresRu, setFeaturesRu] = useState('');
+  const [featuresKz, setFeaturesKz] = useState(initialFeaturesKz);
+  const [featuresRu, setFeaturesRu] = useState(initialFeaturesRu);
 
-  const [characteristics, setCharacteristics] = useState([]);
+  const [characteristics, setCharacteristics] = useState(initialCharacteristics);
 
   const getSplittedByNewLine = (text) => {
     return text.trim().split('\n');
@@ -98,7 +116,7 @@ const TestPage = () => {
     const feature = getFeatures();
 
     return {
-      id: name.toLowerCase().split(' ').join('-'),
+      id: initialId || name.toLowerCase().split(' ').join('-'),
       name,
       subtitle_kz: subtitleKz,
       subtitle_ru: subtitleRu,
@@ -120,10 +138,22 @@ const TestPage = () => {
 
     if (categorySnap.exists()) {
       const category = categorySnap.data();
+      const newProducts = initialId
+        ? [
+            ...category.products.map((p) => {
+              if (p.id === initialId) {
+                return product;
+              }
+              return p;
+            }),
+          ]
+        : [...category.products, product];
+
       await setDoc(doc(categories, categoryName), {
         ...category,
-        products: [...category.products, product],
+        products: [...newProducts],
       });
+      navigate('/');
       console.log('Document data:', category);
     } else {
       console.log('No such document!');
@@ -330,4 +360,4 @@ const TestPage = () => {
   );
 };
 
-export default TestPage;
+export default CreateProduct;

@@ -1,5 +1,5 @@
 import { Box, Button, Container, Divider, Typography } from '@mui/material';
-import { doc, getDoc } from 'firebase/firestore/lite';
+import { collection, doc, getDoc, setDoc } from 'firebase/firestore/lite';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate, useParams } from 'react-router-dom';
@@ -30,6 +30,26 @@ const ProductDetail = () => {
       navigate('/not-found');
     }
   }, []);
+
+  const removeProduct = async () => {
+    const categories = collection(db, 'categories');
+    const categoryRef = doc(db, 'categories', categoryId);
+    const categorySnap = await getDoc(categoryRef);
+
+    if (categorySnap.exists()) {
+      const category = categorySnap.data();
+      const newProducts = category.products.filter((p) => p.id !== productId);
+
+      await setDoc(doc(categories, categoryId), {
+        ...category,
+        products: [...newProducts],
+      });
+      navigate('/');
+      console.log('Document data:', category);
+    } else {
+      console.log('No such document!');
+    }
+  };
 
   if (!product) {
     return (
@@ -153,10 +173,10 @@ const ProductDetail = () => {
           }}>
           <div className="px-4 flex justify-end space-x-8">
             <Button variant="contained" color="success">
-              <Link to="/create">Редактировать</Link>
+              <Link to={`/edit/${categoryId}/${productId}`}>Редактировать</Link>
             </Button>
-            <Button variant="contained" color="error">
-              <Link to="/create">Удалить</Link>
+            <Button variant="contained" color="error" onClick={removeProduct}>
+              Удалить
             </Button>
           </div>
         </Container>
