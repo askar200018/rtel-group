@@ -28,7 +28,7 @@ const Popup = ({ marker, language, isAuthorized }) => {
       </Link>
       {isAuthorized && (
         <div className="flex justify-end space-x-2">
-          <Link to="/create">
+          <Link to={`/edit-marker/${marker.name}`} target="_blank">
             <IconButton color="primary" aria-label="upload picture" component="span">
               <EditIcon />
             </IconButton>

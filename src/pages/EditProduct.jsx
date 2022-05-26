@@ -13,8 +13,6 @@ const EditProduct = () => {
 
   const [product, setProduct] = useState(null);
 
-  const [characteristis, setCharacteristics] = useState('');
-
   const getJoinedByNewLine = (items) => {
     return items.join('\n');
   };

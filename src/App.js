@@ -21,6 +21,7 @@ import HyteraHytalk from './pages/HyteraHytalk';
 import Login from './pages/Login';
 import TechSupport from './pages/TechSupport';
 import EditProduct from './pages/EditProduct';
+import EditMarker from './pages/EditMarker';
 
 import './style.scss';
 
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/hytera-hytalk" element={<HyteraHytalk />} />
         <Route path="/support" element={<TechSupport />} />
         <Route path="/edit/:categoryId/:productId" element={<EditProduct />} />
+        <Route path="/edit-marker/:markerId" element={<EditMarker />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

@@ -5,8 +5,26 @@ import { useForm } from 'react-hook-form';
 import { db } from '../firebase';
 import { HeaderHeight } from '../variables/variables';
 
-const CreateMarker = () => {
-  const { register, handleSubmit, reset } = useForm();
+const CreateMarker = ({
+  initialName = '',
+  initialLng = '',
+  initialLat = '',
+  initialSolutionRu = '',
+  initialSolutionKz = '',
+  initialEquipmentsRu = '',
+  initialEquipmentsKz = '',
+}) => {
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: {
+      name: initialName,
+      lng: initialLng,
+      lat: initialLat,
+      solutionRu: initialSolutionRu,
+      solutionKz: initialSolutionKz,
+      equipmentsRu: initialEquipmentsRu,
+      equipmentsKz: initialEquipmentsKz,
+    },
+  });
   const form = useRef();
 
   const onSubmit = async (data) => {
@@ -15,7 +33,15 @@ const CreateMarker = () => {
 
     await setDoc(doc(markers, marker.name), marker);
 
-    reset();
+    reset({
+      name: '',
+      lng: '',
+      lat: '',
+      solutionRu: '',
+      solutionKz: '',
+      equipmentsRu: '',
+      equipmentsKz: '',
+    });
   };
 
   const getSplittedByNewLine = (text) => {
