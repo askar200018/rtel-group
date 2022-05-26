@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Container } from '@mui/material';
 import NavbarLink from './NavbarLink';
 import LanguageMenu from './LanguageMenu';
+import { Link } from 'react-router-dom';
 
 const TopBar = () => {
   const { t } = useTranslation();
@@ -12,13 +13,20 @@ const TopBar = () => {
         sx={{
           fontFamily: 'Roboto, sans-serif',
         }}>
-        <ul className="flex justify-end space-x-4">
-          <NavbarLink linkTo="/legal-info" name={t('navbar.Юринфо')}></NavbarLink>
-          <NavbarLink linkTo="/contacts" name={t('navbar.Контакты')}></NavbarLink>
-          <li className="w-20">
-            <LanguageMenu />
-          </li>
-        </ul>
+        <div className="flex justify-between">
+          <ul>
+            <Link to="/login" className="text-white">
+              Войти
+            </Link>
+          </ul>
+          <ul className="flex justify-end space-x-4">
+            <NavbarLink linkTo="/legal-info" name={t('navbar.Юринфо')}></NavbarLink>
+            <NavbarLink linkTo="/contacts" name={t('navbar.Контакты')}></NavbarLink>
+            <li className="w-20">
+              <LanguageMenu />
+            </li>
+          </ul>
+        </div>
       </Container>
     </div>
   );

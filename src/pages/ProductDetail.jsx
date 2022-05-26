@@ -1,9 +1,10 @@
-import { Box, Container, Divider, Typography } from '@mui/material';
+import { Box, Button, Container, Divider, Typography } from '@mui/material';
 import { doc, getDoc } from 'firebase/firestore/lite';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { db } from '../firebase';
+import { isAuthorized } from '../helpers/auth';
 import { HeaderHeight } from '../variables/variables';
 
 const ProductDetail = () => {
@@ -144,6 +145,22 @@ const ProductDetail = () => {
           </div>
         </Container>
       </div>
+      {isAuthorized() && (
+        <Container
+          maxWidth="lg"
+          sx={{
+            paddingY: '24px',
+          }}>
+          <div className="px-4 flex justify-end space-x-8">
+            <Button variant="contained" color="success">
+              <Link to="/create">Редактировать</Link>
+            </Button>
+            <Button variant="contained" color="error">
+              <Link to="/create">Удалить</Link>
+            </Button>
+          </div>
+        </Container>
+      )}
     </div>
   );
 };

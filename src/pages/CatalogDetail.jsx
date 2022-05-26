@@ -1,10 +1,11 @@
-import { Box, Container, Divider, Typography } from '@mui/material';
+import { Box, Button, Container, Divider, Typography } from '@mui/material';
 import { collection, doc, getDoc, getDocs, setDoc } from 'firebase/firestore/lite';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { db } from '../firebase';
+import { isAuthorized } from '../helpers/auth';
 import { CATEGORIES } from '../mock/mock';
 import { HeaderHeight } from '../variables/variables';
 
@@ -12,7 +13,9 @@ const CatalogDetail = () => {
   const categoryName = useParams().categoryName;
   const [products, setProducts] = useState([]);
   const { t, i18n } = useTranslation();
-  console.log('language', i18n.language);
+
+  const isAuthorize = isAuthorized();
+
   useEffect(async () => {
     // const categories = collection(db, 'categories');
 
@@ -62,6 +65,27 @@ const CatalogDetail = () => {
               />
             ))}
         </Container>
+        {isAuthorize && (
+          <Container
+            maxWidth="xl"
+            sx={{
+              paddingY: '24px',
+            }}>
+            <div className="px-4">
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: '#1f2937',
+                  '&:hover': {
+                    backgroundColor: '#1f2937',
+                    opacity: 0.9,
+                  },
+                }}>
+                <Link to="/create">Добавить новый</Link>
+              </Button>
+            </div>
+          </Container>
+        )}
       </div>
     </div>
   );

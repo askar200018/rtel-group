@@ -48,3 +48,8 @@
 .test h2 {
   color: green;
 }
+
+.main-bg {
+  background: url("./assets/images/bg-main.jpeg") center no-repeat;
+  background-size: cover;
+}
