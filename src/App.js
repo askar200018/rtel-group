@@ -35,8 +35,8 @@ const App = () => {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/tetra" element={<Tetra />} />
         <Route path="/catalog/poc-solutions" element={<PocSolutions />} />
-        <Route path="/catalog/tetra/:categoryName" element={<CatalogDetail />} />
-        <Route path="/catalog/tetra/:categoryId/:productId" element={<ProductDetail />} />
+        <Route path="/catalog/:catalogName/:categoryName" element={<CatalogDetail />} />
+        <Route path="/catalog/:catalogName/:categoryId/:productId" element={<ProductDetail />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/solutions/:solutionName" element={<SolutionDetail />} />
         <Route path="/projects" element={<Projects />} />

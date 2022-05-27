@@ -78,13 +78,13 @@ const PocSolutions = () => {
           </Typography>
           <div className="flex justify-between">
             <SectionCard
-              linkTo="/test"
+              linkTo="poc-systems"
               imgLink="https://www.hytera.ru/upload/resize_cache/webp/upload/iblock/f69/f696f6088e6741eac57666ab3741398a.webp"
               alt="Tetra Systems"
               title={t('catalog.poc-solutions.sections.section1')}
             />
             <SectionCard
-              linkTo="/test"
+              linkTo="poc-terminals"
               imgLink="https://www.hytera.ru/upload/resize_cache/webp/upload/iblock/5be/5be3867e350f7ed362bd0c3b554d3b1b.webp"
               alt="Systems"
               title={t('catalog.poc-solutions.sections.section2')}

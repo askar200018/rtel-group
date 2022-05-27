@@ -82,13 +82,13 @@ const Tetra = () => {
               title={t('catalog.tetra-systems.sections.section1')}
             />
             <SectionCard
-              linkTo="/test"
+              linkTo="bda-systems"
               imgLink="https://www.hytera.ru/upload/resize_cache/webp/iblock/dc8/dc8c79831d6c6fc8e3600215f3ded547.webp"
               alt="Systems"
               title={t('catalog.tetra-systems.sections.section2')}
             />
             <SectionCard
-              linkTo="/test"
+              linkTo="tetra-terminals"
               imgLink="https://www.hytera.ru/upload/resize_cache/webp/iblock/6b1/6b1a08e276dfc7aba6addb8aa175a661.webp"
               alt="TETRA терминалы"
               title={t('catalog.tetra-systems.sections.section3')}

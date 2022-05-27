@@ -6,7 +6,9 @@ import hpLogo from '../assets/images/hp.png';
 import btSignalLogo from '../assets/images/bt-signal.png';
 import hyteraLogo from '../assets/images/hytera.png';
 import transtelesoftLogo from '../assets/images/transtelesoft.png';
-import { Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
 const Main = () => {
   const { t } = useTranslation();
@@ -35,6 +37,37 @@ const Main = () => {
             />
           </div>
         </div>
+        <Container maxWidth="xl" sx={{ marginBottom: '48px' }}>
+          <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            <SwiperSlide>
+              <div className="flex justify-center items-center w-full h-full bg-cover bg-no-repeat slider1">
+                <div>
+                  <Typography variant="h4" className="text-white" sx={{ marginBottom: '16px' }}>
+                    Всегда на связи
+                  </Typography>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex justify-center items-center w-full h-full bg-cover bg-no-repeat slider2">
+                <div>
+                  <Typography variant="h4" className="text-white" sx={{ marginBottom: '16px' }}>
+                    Профессиональная оперативная связь будущего
+                  </Typography>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex justify-center items-center w-full h-full bg-cover bg-no-repeat slider3">
+                <div>
+                  <Typography variant="h4" className="text-white" sx={{ marginBottom: '16px' }}>
+                    RTEL - больше чем просто компания
+                  </Typography>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </Container>
         <div>
           <div className="align-middle">
             {/* <Typography align="center" variant="h5" sx={{ marginBottom: '16px' }}>

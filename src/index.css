@@ -53,3 +53,16 @@
   background: url("./assets/images/bg-main.jpg") center no-repeat;
   background-size: cover;
 }
+
+.slider1 {
+  background: url("./assets/images/vsegda-na-svazi.jpg") center no-repeat;
+  background-size: cover;
+}
+.slider2 {
+  background: url("./assets/images/prof-oper-svaz-budushego.jpg") center no-repeat;
+  background-size: cover;
+}
+.slider3 {
+  background: url("./assets/images/rtel-bolshe-chem-prosto-comp.jpg") center no-repeat;
+  background-size: cover;
+}

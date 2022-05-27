@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Box, Container, Divider, Typography } from '@mui/material';
+import { Box, Button, Container, Divider, Typography } from '@mui/material';
 import { HeaderHeight } from '../variables/variables';
 import DG from '2gis-maps';
 
@@ -7,10 +7,12 @@ const Contacts = () => {
   const mapContainer = useRef(null);
   useEffect(() => {
     const map = DG.map(mapContainer.current, {
-      center: [54.98, 82.89],
+      center: [43.212348, 76.898539],
       zoom: 13,
     });
-    DG.marker([54.98, 82.89]).addTo(map).bindPopup('Вы кликнули по мне!');
+    DG.marker([43.212348, 76.898539])
+      .addTo(map)
+      .bindPopup('Гагарина 236, этаж 3, кабинет №333 Rtl Group ');
   }, []);
 
   return (
@@ -32,25 +34,26 @@ const Contacts = () => {
         <div className="flex justify-between p-4 bg-gray-100">
           <div className="flex-1 p-2">
             <Typography variant="subtitle1" sx={{ marginBottom: '16px' }}>
-              АДРЕС ПРЕДСТАВИТЕЛЬСТВА HYTERA В РОССИИ
+              АДРЕС ОФИСА RTEL GROUP В КАЗАХСТАНЕ
             </Typography>
             <Typography variant="body2" sx={{ marginBottom: '8px' }}>
-              115054, Россия, г. Москва, Павелецкая площадь 2, стр. 2, этаж 15, офис Хайтера
+              115054, Казахстан, г. Алматы, Бостандыкский р., Гагарина 236, этаж 3, кабинет №333 Rtl
+              Group
             </Typography>
             <Typography variant="body2" sx={{ marginBottom: '8px' }}>
               Телефон: +7 (495) 669-68-90
             </Typography>
             <Typography variant="body2" sx={{ marginBottom: '8px' }}>
-              Email: info@hytera.ru
+              Email: будет@gmail.kz
             </Typography>
-            <Divider />
-            <Typography variant="subtitle1" sx={{ marginBottom: '16px' }}>
+            <Button variant="contained">Связаться с нами </Button>
+            {/* <Typography variant="subtitle1" sx={{ marginBottom: '16px' }}>
               АДРЕС ШТАБКВАРТИРЫ
             </Typography>
             <Typography variant="body2" sx={{ marginBottom: '8px' }}>
               Hytera Tower, Shenzhen Hi-Tech Industrial Park North, Beihuan RD.9108#, Nanshan
               District, Shenzhen, P.R.C.
-            </Typography>
+            </Typography> */}
           </div>
           <div className="flex-1 flex items-center justify-center">
             <div ref={mapContainer} className="w-[500px] h-[300px] bg-green-600"></div>

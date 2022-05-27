@@ -6,8 +6,30 @@ import { Link, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { db } from '../firebase';
 import { isAuthorized } from '../helpers/auth';
-import { CATEGORIES } from '../mock/mock';
 import { HeaderHeight } from '../variables/variables';
+
+const CATEGORIES = [
+  {
+    name: 'TETRA системы',
+    value: 'tetra-systems',
+  },
+  {
+    name: 'Система двунаправленных усилителей радиосигнала BDA',
+    value: 'bda-systems',
+  },
+  {
+    name: 'TETRA терминалы',
+    value: 'tetra-terminals',
+  },
+  {
+    name: 'Системы PoC',
+    value: 'poc-systems',
+  },
+  {
+    name: 'Терминалы РоС',
+    value: 'poc-terminals',
+  },
+];
 
 const CatalogDetail = () => {
   const categoryName = useParams().categoryName;
