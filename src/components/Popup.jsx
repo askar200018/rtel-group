@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
-const Popup = ({ marker, language, isAuthorized }) => {
+const Popup = ({ marker, language, isAuthorized, handleDeleteMarker }) => {
   return (
     <div>
       <h4 className="text-base text-gray-800">Использованные оборудования:</h4>
@@ -33,11 +33,13 @@ const Popup = ({ marker, language, isAuthorized }) => {
               <EditIcon />
             </IconButton>
           </Link>
-          <Link to="/create">
-            <IconButton color="error" aria-label="upload picture" component="span">
-              <DeleteIcon />
-            </IconButton>
-          </Link>
+          <IconButton
+            color="error"
+            aria-label="upload picture"
+            component="span"
+            onClick={() => handleDeleteMarker(marker.name)}>
+            <DeleteIcon />
+          </IconButton>
         </div>
       )}
     </div>

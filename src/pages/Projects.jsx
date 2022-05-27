@@ -5,7 +5,7 @@ import mapboxgl from '!mapbox-gl';
 import { HeaderHeight } from '../variables/variables';
 import Popup from '../components/Popup';
 import { HashRouter, Link } from 'react-router-dom';
-import { collection, getDocs, query } from 'firebase/firestore/lite';
+import { collection, deleteDoc, doc, getDocs, query } from 'firebase/firestore/lite';
 import { db } from '../firebase';
 import { useTranslation } from 'react-i18next';
 import '../i18n';
@@ -41,7 +41,12 @@ const Projects = () => {
       const popupNode = document.createElement('div');
       ReactDOM.render(
         <HashRouter>
-          <Popup isAuthorized={isAuthorize} marker={marker} language={i18n.language} />
+          <Popup
+            isAuthorized={isAuthorize}
+            marker={marker}
+            language={i18n.language}
+            handleDeleteMarker={handleDeleteMarker}
+          />
         </HashRouter>,
         popupNode,
       );
@@ -56,6 +61,12 @@ const Projects = () => {
         .addTo(map.current);
     });
   }, []);
+
+  const handleDeleteMarker = async (name) => {
+    console.log('delete', name);
+    await deleteDoc(doc(db, 'markers', name));
+    window.location.reload();
+  };
 
   const getMarkers = async () => {
     const q = query(collection(db, 'markers'));
